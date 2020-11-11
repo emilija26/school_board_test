@@ -16,7 +16,7 @@ class GradeController extends Controller
      */
     public function index(Request $request)
     {
-        $student = Student::findOne($request->get('id'));
+        $student = Student::findOne($request->get('id'));   //Finds a single document matching the query.
         $grades = Student::getGrades($request->get('id'));
         return $this->render('grades/index.html', ['student' => $student, 'grades' => $grades]);
     }
